@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAKTIKUM 3 & 4</title>
+    <link rel="stylesheet" href="Asset/css/bootstrap.css">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif; 
+            background-color: #ffffff; 
+        }
+        .sidebar {
+            background-color: #dda0c9; 
+        }
+        .list-group-item {
+            cursor: pointer;
+        }
+        .list-group-item:hover {
+            background-color: #ff80bf; 
+        }
+        h1, h2 {
+            color: #ff4d88; 
+        }
+        #jawaban-area p {
+            background-color: #ffe6f2; 
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar vh-100 p-3">
+                <h4>Daftar Soal</h4>
+                <ul class="list-group">
+                    <li class="list-group-item" onclick="tampilkanJawaban(1)">Penjelasan Konsep PHP</li>
+                    <li class="list-group-item" onclick="tampilkanJawaban(2)">Perbandingan GET dan POST</li>
+                    <li class="list-group-item" onclick="tampilkanJawaban(3)">Penggunaan include, require, dan koneksi PHP dengan MySQL</li>
+                </ul>
+            </div>
+            <!-- Konten Jawaban -->
+            <div class="col-md-9 p-5">
+                <h1>LAPORAN TEORI</h1>
+                <h2>ERIN MARRISON | 202331092</h2>
+                <div id="jawaban-area">
+                    <p>Klik pada soal di sidebar untuk melihat jawaban.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Asset/js/bootstrap.js"></script>
+    <script>
+        const jawaban = {
+            1: `
+                <ol>
+                    <li>Penjelasan Konsep PHP</li>
+                    <ul> 
+                        <li>Jelaskan apa itu PHP? <br>
+                            PHP adalah bahasa pemrograman populer yang sering digunakan dalam pengembangan web untuk menciptakan situs web interaktif. Fungsinya berkaitan erat dengan kinerja server dan kelancaran sebuah website. PHP juga memainkan peran penting dalam membangun situs web yang dinamis dan fungsional. Tak heran, kalau bahasa pemrograman satu ini semakin banyak digunakan oleh web developer. PHP bersifat open source, yang berarti kode sumbernya dapat diakses oleh siapa saja secara gratis. Bahkan para pengembang dapat memodifikasinya sesuai kebutuhan. PHP dapat terhubung dengan berbagai jenis basis data seperti MySQL, PostgreSQL, SQLite, dan lainnya. Selain itu, PHP dapat beroperasi di berbagai OS komputer seperti Linux, Windows, Mac. Kemudahan sintaks PHP membuatnya menjadi pilihan yang ideal untuk pemula dalam pemrograman web. Alasannya karena coding PHP tidak jauh berbeda dengan HTML yang relatif sederhana.
+                        </li>
+                        <li>Sebutkan keunggulan PHP dibandingkan dengan bahasa pemrograman lainnya dalam konteks pengembangan web. <br>
+                            PHP memainkan peran penting dalam pengembangan web modern. Kehadirannya dapat membantu pengembang untuk menciptakan situs web yang dinamis, interaktif, dan aman. Inilah alasan kuat mengapa banyak pengembang menggunakan coding PHP untuk mengoperasikan sebuah website. PHP bersifat open source, yang berarti kode sumbernya dapat diakses oleh siapa saja secara gratis. Bahkan para pengembang dapat memodifikasinya sesuai kebutuhan. PHP dapat terhubung dengan berbagai jenis basis data seperti MySQL, PostgreSQL, SQLite, dan lainnya. Selain itu, PHP dapat beroperasi di berbagai OS komputer seperti Linux, Windows, Mac. Kemudahan sintaks PHP membuatnya menjadi pilihan yang ideal untuk pemula dalam pemrograman web. Alasannya karena coding PHP tidak jauh berbeda dengan HTML yang relatif sederhana.
+                        </li>
+                    </ul>
+                </ol>
+            `,
+            2: `
+                <ol>
+                    <li>Perbandingan GET dan POST</li>
+                    <ul>
+                        <li>Jelaskan perbedaan antara metode GET dan POST dalam penggunaan di sebuah website. <br>
+                            Metode GET, Metode GET digunakan untuk mengirimkan data melalui URL. Data yang dikirimkan dengan metode GET akan muncul secara terbuka di URL, sehingga dapat terlihat oleh pengguna atau tersimpan dalam log server. Beberapa karakter khusus seperti spasi akan diubah menjadi tanda "+" atau "%20". <br>
+                            Metode POST, Metode POST digunakan untuk mengirimkan data secara tersembunyi melalui permintaan HTTP. Data yang dikirimkan dengan metode POST tidak akan muncul di URL, sehingga lebih aman dan lebih cocok untuk mengirim data sensitif seperti kata sandi atau informasi pribadi. Data dikirimkan sebagai bagian dari badan permintaan HTTP dan tidak terlihat oleh pengguna atau tersimpan dalam log server.
+                        </li>
+
+                        <li>Berikan contoh kasus penggunaan yang tepat untuk masing – masing metode. <br>
+                            Contoh penggunaan metode GET : <br>
+                            <img src="Asset/GET.png" alt="GET"> <br>
+                            Pada contoh di atas, data dari input teks "username" akan dikirimkan dengan metode GET ke file "proses.php". <br>
+                            Contoh Penggunaan metode POST : <br>
+                            <img src="Asset/POST.png" alt="POST"> <br>
+                            Pada contoh di atas, data dari input teks "username" akan dikirimkan dengan metode POST ke file "proses.php".
+                        </li>
+                    </ul>
+                </ol>
+            `,
+            3: `
+                <ol>
+                    <li>Penggunaan include, require, dan koneksi PHP dengan MySQL</li>
+                    <ul>
+                        <li>Jelaskan fungsi include dan require dalam PHP, termasuk perbedaan mendasar antara keduanya <br>
+                            include dalam php artinya seperti terjemahannya include berarti memasukkan, artinya kita memasukkan  file kedalam dokumen kita, file tersebut bisa apa saja, termasuk script PHP, file konfigurasi, file HTML, dll. Penulisan include pada PHP dapat dilakukan dengan dua cara, yaitu dengan bentuk fungsi atau bentuk statement sedangkan require adalah Seperti terjemahannya, require berarti butuh, artinya kita butuh file tersebut, sehingga jika file tersebut tidak ada maka script selanjutnya tidak akan berjalan. Penulisan require pada PHP Seperti sebelumnya, require pada php dapat ditulis dalam dua cara, yaitu bentuk fungsi dan statement. Perbedaan antara include dan require dalam PHP adalah Perbedaan utama antara include dan require di PHP terletak pada penanganan kesalahan jika file tidak ditemukan: include hanya menghasilkan peringatan dan skrip tetap berjalan, sedangkan require menghasilkan kesalahan fatal dan menghentikan eksekusi. Gunakan include untuk file opsional, seperti template tambahan, dan require untuk file yang krusial, seperti konfigurasi utama.
+                        </li>
+                        <li>Berikan contoh implementasi sederhana untuk menyambungkan PHP dengan database MySQL. <br>
+                            Untuk menyambungkan PHP dengan database MySQL, pertama, buat konfigurasi koneksi dengan menentukan nama server (misalnya localhost), nama pengguna (seperti root), kata sandi, dan nama database. Kemudian, gunakan objek mysqli untuk membuat koneksi, misalnya $conn = new mysqli($servername, $username, $password, $database);. Periksa apakah koneksi berhasil menggunakan $conn->connect_error, dan jika gagal, hentikan eksekusi dengan die() untuk menampilkan pesan kesalahan. Jika koneksi berhasil, Anda dapat melanjutkan operasi database. Setelah selesai, tutup koneksi menggunakan $conn->close() untuk menghemat sumber daya.
+                        </li>
+                        <li>Mengapa penggunaan include dan require penting dalam pengelolaan kode program yang besar dan kompleks? <br> 
+                            Penggunaan include dan require sangat penting dalam pengelolaan kode program yang besar dan kompleks karena membantu memecah kode menjadi modul yang lebih kecil dan mudah dikelola. Dengan menyertakan file terpisah untuk fungsi, konfigurasi, atau template, pengembang dapat menghindari duplikasi kode, mempermudah pemeliharaan, dan meningkatkan keterbacaan program.
+                        </li>
+                    </ul>
+                </ol>
+            `
+        };
+
+        function tampilkanJawaban(soalId) {
+            const jawabanArea = document.getElementById('jawaban-area');
+            jawabanArea.innerHTML = jawaban[soalId];
+        }
+    </script>
+</body>
+</html>
